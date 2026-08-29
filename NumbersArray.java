@@ -63,5 +63,4 @@ public class NumbersArray {
         }
         return Arrays.copyOf(res, i);
     }
-
 }
