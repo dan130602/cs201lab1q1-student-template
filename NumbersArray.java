@@ -46,18 +46,18 @@ public class NumbersArray {
 
     public static Integer[] findUnique(Integer[] inputs){
         Integer[] res = new Integer[inputs.length];
-        Map<String, Integer> hashmap = new HashMap<>();
+        Map<Integer, Integer> hashmap = new HashMap<>();
         for (Integer input: inputs){
             if (hashmap.containsKey(input)){
-                hashmap.put(String.valueOf(input), hashmap.get(input) + 1);
+                hashmap.put(input, hashmap.get(input) + 1);
             }else {
-                hashmap.put(String.valueOf(input), 1);
+                hashmap.put(input, 1);
             }
         }
         int i = 0;
-        for (Map.Entry<String, Integer> entry :hashmap.entrySet()){
+        for (Map.Entry<Integer, Integer> entry :hashmap.entrySet()){
             if (entry.getValue() == 1){
-                res[i] = Integer.valueOf(entry.getKey());
+                res[i] = entry.getKey();
                 i += 1;
             }
         }
